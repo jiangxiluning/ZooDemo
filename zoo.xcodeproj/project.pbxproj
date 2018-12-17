@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6563D71021C7EC06000E4D6A /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563D70F21C7EC06000E4D6A /* Pets.swift */; };
 		65E812A921C789C700BAC57C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812A821C789C700BAC57C /* AppDelegate.swift */; };
-		65E812AB21C789C700BAC57C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812AA21C789C700BAC57C /* FirstViewController.swift */; };
-		65E812AD21C789C700BAC57C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812AC21C789C700BAC57C /* SecondViewController.swift */; };
+		65E812AB21C789C700BAC57C /* PetsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812AA21C789C700BAC57C /* PetsListViewController.swift */; };
 		65E812B021C789C700BAC57C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E812AE21C789C700BAC57C /* Main.storyboard */; };
 		65E812B221C789C800BAC57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E812B121C789C800BAC57C /* Assets.xcassets */; };
 		65E812B521C789C800BAC57C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E812B321C789C800BAC57C /* LaunchScreen.storyboard */; };
 		65E812C021C789C800BAC57C /* zooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812BF21C789C800BAC57C /* zooTests.swift */; };
+		65E812CB21C7A4AA00BAC57C /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812CA21C7A4AA00BAC57C /* AddPetViewController.swift */; };
+		65E812CD21C7A67000BAC57C /* PetVeriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812CC21C7A67000BAC57C /* PetVeriViewController.swift */; };
+		65E812D621C7CF4100BAC57C /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812D521C7CF4100BAC57C /* Detector.swift */; };
+		65E812D821C7CF6400BAC57C /* Recognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812D721C7CF6400BAC57C /* Recognizer.swift */; };
+		65E812DA21C7CF7B00BAC57C /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812D921C7CF7B00BAC57C /* Classifier.swift */; };
+		A5A9CAE6A1F79A78A7F7B175 /* Pods_zoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752D56B2B8B4DF7F24F21EB1 /* Pods_zoo.framework */; };
+		C411EAD1125D5FCA3555AE22 /* Pods_zooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB4FEC026083B714E72271E /* Pods_zooTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02FD7009BEB5F132EF06B576 /* Pods-zoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zoo/Pods-zoo.debug.xcconfig"; sourceTree = "<group>"; };
+		168F0BA1C5096CF313C131BC /* Pods-zooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zooTests/Pods-zooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		415D1A79BD927D397C671C6A /* Pods-zoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-zoo/Pods-zoo.release.xcconfig"; sourceTree = "<group>"; };
+		4AB4FEC026083B714E72271E /* Pods_zooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59D8F989228B881FAA6B2C68 /* Pods-zooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zooTests/Pods-zooTests.release.xcconfig"; sourceTree = "<group>"; };
+		6563D70F21C7EC06000E4D6A /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
 		65E812A521C789C700BAC57C /* zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E812A821C789C700BAC57C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65E812AA21C789C700BAC57C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		65E812AC21C789C700BAC57C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		65E812AA21C789C700BAC57C /* PetsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsListViewController.swift; sourceTree = "<group>"; };
 		65E812AF21C789C700BAC57C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E812B121C789C800BAC57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E812B421C789C800BAC57C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +50,13 @@
 		65E812BB21C789C800BAC57C /* zooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E812BF21C789C800BAC57C /* zooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zooTests.swift; sourceTree = "<group>"; };
 		65E812C121C789C800BAC57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65E812CA21C7A4AA00BAC57C /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		65E812CC21C7A67000BAC57C /* PetVeriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetVeriViewController.swift; sourceTree = "<group>"; };
+		65E812CF21C7AF9C00BAC57C /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		65E812D521C7CF4100BAC57C /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		65E812D721C7CF6400BAC57C /* Recognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognizer.swift; sourceTree = "<group>"; };
+		65E812D921C7CF7B00BAC57C /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		752D56B2B8B4DF7F24F21EB1 /* Pods_zoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A9CAE6A1F79A78A7F7B175 /* Pods_zoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +72,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C411EAD1125D5FCA3555AE22 /* Pods_zooTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1AA40802FFBF5A5F4082B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02FD7009BEB5F132EF06B576 /* Pods-zoo.debug.xcconfig */,
+				415D1A79BD927D397C671C6A /* Pods-zoo.release.xcconfig */,
+				168F0BA1C5096CF313C131BC /* Pods-zooTests.debug.xcconfig */,
+				59D8F989228B881FAA6B2C68 /* Pods-zooTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		65E8129C21C789C700BAC57C = {
 			isa = PBXGroup;
 			children = (
 				65E812A721C789C700BAC57C /* zoo */,
 				65E812BE21C789C800BAC57C /* zooTests */,
 				65E812A621C789C700BAC57C /* Products */,
+				65E812CE21C7AF9C00BAC57C /* Frameworks */,
+				2F1AA40802FFBF5A5F4082B7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +113,15 @@
 		65E812A721C789C700BAC57C /* zoo */ = {
 			isa = PBXGroup;
 			children = (
+				65E812D221C7CDC400BAC57C /* FaceRecog */,
 				65E812A821C789C700BAC57C /* AppDelegate.swift */,
-				65E812AA21C789C700BAC57C /* FirstViewController.swift */,
-				65E812AC21C789C700BAC57C /* SecondViewController.swift */,
+				65E812AA21C789C700BAC57C /* PetsListViewController.swift */,
 				65E812AE21C789C700BAC57C /* Main.storyboard */,
 				65E812B121C789C800BAC57C /* Assets.xcassets */,
 				65E812B321C789C800BAC57C /* LaunchScreen.storyboard */,
 				65E812B621C789C800BAC57C /* Info.plist */,
+				65E812CA21C7A4AA00BAC57C /* AddPetViewController.swift */,
+				65E812CC21C7A67000BAC57C /* PetVeriViewController.swift */,
 			);
 			path = zoo;
 			sourceTree = "<group>";
@@ -99,6 +135,35 @@
 			path = zooTests;
 			sourceTree = "<group>";
 		};
+		65E812CE21C7AF9C00BAC57C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E812CF21C7AF9C00BAC57C /* SQLite.framework */,
+				752D56B2B8B4DF7F24F21EB1 /* Pods_zoo.framework */,
+				4AB4FEC026083B714E72271E /* Pods_zooTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65E812D221C7CDC400BAC57C /* FaceRecog */ = {
+			isa = PBXGroup;
+			children = (
+				65E812DB21C7CF9200BAC57C /* models */,
+				65E812D521C7CF4100BAC57C /* Detector.swift */,
+				65E812D721C7CF6400BAC57C /* Recognizer.swift */,
+				65E812D921C7CF7B00BAC57C /* Classifier.swift */,
+				6563D70F21C7EC06000E4D6A /* Pets.swift */,
+			);
+			path = FaceRecog;
+			sourceTree = "<group>";
+		};
+		65E812DB21C7CF9200BAC57C /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65E812C421C789C800BAC57C /* Build configuration list for PBXNativeTarget "zoo" */;
 			buildPhases = (
+				171A69480844438DD4A51354 /* [CP] Check Pods Manifest.lock */,
 				65E812A121C789C700BAC57C /* Sources */,
 				65E812A221C789C700BAC57C /* Frameworks */,
 				65E812A321C789C700BAC57C /* Resources */,
+				9D428826C4294C2FA3D97590 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65E812C721C789C800BAC57C /* Build configuration list for PBXNativeTarget "zooTests" */;
 			buildPhases = (
+				25EEA33C909080DEA4EC3B4C /* [CP] Check Pods Manifest.lock */,
 				65E812B721C789C800BAC57C /* Sources */,
 				65E812B821C789C800BAC57C /* Frameworks */,
 				65E812B921C789C800BAC57C /* Resources */,
@@ -195,14 +263,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		171A69480844438DD4A51354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25EEA33C909080DEA4EC3B4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D428826C4294C2FA3D97590 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-zoo/Pods-zoo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDBSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zoo/Pods-zoo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65E812A121C789C700BAC57C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E812AD21C789C700BAC57C /* SecondViewController.swift in Sources */,
+				65E812DA21C7CF7B00BAC57C /* Classifier.swift in Sources */,
+				6563D71021C7EC06000E4D6A /* Pets.swift in Sources */,
+				65E812CD21C7A67000BAC57C /* PetVeriViewController.swift in Sources */,
+				65E812D821C7CF6400BAC57C /* Recognizer.swift in Sources */,
+				65E812CB21C7A4AA00BAC57C /* AddPetViewController.swift in Sources */,
 				65E812A921C789C700BAC57C /* AppDelegate.swift in Sources */,
-				65E812AB21C789C700BAC57C /* FirstViewController.swift in Sources */,
+				65E812AB21C789C700BAC57C /* PetsListViewController.swift in Sources */,
+				65E812D621C7CF4100BAC57C /* Detector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +508,15 @@
 		};
 		65E812C521C789C800BAC57C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02FD7009BEB5F132EF06B576 /* Pods-zoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MX52LFJYNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = zoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,10 +531,15 @@
 		};
 		65E812C621C789C800BAC57C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415D1A79BD927D397C671C6A /* Pods-zoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MX52LFJYNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = zoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,6 +554,7 @@
 		};
 		65E812C821C789C800BAC57C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168F0BA1C5096CF313C131BC /* Pods-zooTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +576,7 @@
 		};
 		65E812C921C789C800BAC57C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D8F989228B881FAA6B2C68 /* Pods-zooTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
