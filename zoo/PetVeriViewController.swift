@@ -6,4 +6,10 @@
 //  Copyright © 2018 luning. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PetVeriViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

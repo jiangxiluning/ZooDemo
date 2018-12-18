@@ -6,4 +6,15 @@
 //  Copyright © 2018 luning. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AddPetViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    //Mark: Actions
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

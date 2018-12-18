@@ -8,12 +8,21 @@
 
 import UIKit
 
-class PetsList: UIViewController {
-
+class PetsListViewController: UIViewController {
+    
+    // MARK: properties
+    @IBOutlet weak var petsTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+    // MARK: actions
+    
+    
 
 
 }
