@@ -11,14 +11,15 @@ import WCDBSwift
 
 class Pet: TableCodable {
     //Your own properties
-    let id: Int = 0
-    var name: String // Optional if it would be nil in some WCDB selection
+    var id: Int = 0
+    var name: String = ""    // Optional if it would be nil in some WCDB selection
     var age: Int? = nil // Optional if it would be nil in some WCDB selection
     var ownerName: String? = nil
     var ownerID: String? = nil
 
     enum CodingKeys: String, CodingTableKey {
         typealias Root = Pet
+        static let objectRelationalMapping = TableBinding(CodingKeys.self)
 
         //List the properties which should be bound to table
         case id
@@ -27,7 +28,7 @@ class Pet: TableCodable {
         case ownerName
         case ownerID
 
-        static let objectRelationalMapping = TableBinding(CodingKeys.self)
+
 
         //Column constraints for primary key, unique, not null, default value and so on. It is optional.
         static var columnConstraintBindings: [CodingKeys: ColumnConstraintBinding]? {

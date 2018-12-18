@@ -17,6 +17,8 @@ class zooTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let db = PetsDataSource.db
+        db.cleanUp()
     }
 
     func testExample() {
@@ -24,8 +26,17 @@ class zooTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let db = PetsDataSource.db
-        db.addPet(name: "john")
-        db.findPetByName(name: "john")
+        let successful = db.addPet(name: "john")
+        XCTAssert(successful)
+        if let pet = db.findPetByName(name: "john") {
+            XCTAssert(true)
+            print(pet.name)
+        }
+        else{
+            XCTAssert(false)
+        }
+        
+        
     }
 
     func testPerformanceExample() {

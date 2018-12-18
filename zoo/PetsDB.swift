@@ -14,23 +14,31 @@ class PetsDataSource {
     
     // Mark: Properties
     static let db = PetsDataSource()
-    private let innerDB = Database(withPath: "data.db")
+    private let innerDB: Database
     private let tableName = "Pets"
 
-    private init(){
-        do {
-            try self.innerDB.create(table: self.tableName, of: Pet.self)
-        } catch let error{
-            print("create table error: \(error)")
-        }
 
+    private init(){
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let dbPath = paths[0] + "/data.db"
+        self.innerDB = Database(withPath: dbPath)
+        
+        let isTableExisting = try! self.innerDB.isTableExists(self.tableName)
+        
+        if !isTableExisting {
+            do {
+                try self.innerDB.create(table: self.tableName, of: Pet.self)
+            } catch let error{
+                print("create table error: \(error)")
+            }
+        }
     }
     
     
     func addPet(name: String, age: Int? = nil, ownerName: String? = nil, ownerID: String? = nil) -> Bool {
         do {
             try self.innerDB.run(transaction: { () -> Void in
-                let pet = try Pet(from: JSONDecoder() as! Decoder)
+                let pet = Pet()
                 pet.name = name
                 pet.age = age
                 pet.ownerName = ownerName
@@ -51,6 +59,16 @@ class PetsDataSource {
         }catch let error{
             print("\(error)")
             return nil
+        }
+    }
+    
+    func cleanUp() {
+        do {
+            try self.innerDB.close(onClosed: {
+                try self.innerDB.removeFiles()
+            })
+        } catch let error {
+            print("move file error: \(error)")
         }
     }
 }
