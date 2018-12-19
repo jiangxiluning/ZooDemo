@@ -26,11 +26,22 @@ class zooTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let db = PetsDataSource.db
-        let successful = db.addPet(name: "john")
-        XCTAssert(successful)
-        if let pet = db.findPetByName(name: "john") {
+        do{
+            try db.addPet(name: "john", category: Pet.Category.dog)
             XCTAssert(true)
-            print(pet.name)
+        }
+        catch let e{
+            print("\(e)")
+            XCTAssert(false)
+        }
+        if let pet = db.findPetByNameAndCategory(name: "john", category: Pet.Category.dog) {
+            XCTAssert(true)
+            guard let category = Pet.Category(rawValue: pet.category!) else {
+                print("something wrong with category.")
+                XCTAssert(false)
+                return
+            }
+            print("Pet Name: \(pet.name) Category: \(category)")
         }
         else{
             XCTAssert(false)

@@ -9,13 +9,23 @@
 import Foundation
 import WCDBSwift
 
+
 class Pet: TableCodable {
+    
+    enum Category: Int {
+        case dog = 0, cat
+    }
+ 
     //Your own properties
     var id: Int = 0
     var name: String = ""    // Optional if it would be nil in some WCDB selection
+    var category : Int? = nil
+    var gender: Bool = true // true for male false for female
     var age: Int? = nil // Optional if it would be nil in some WCDB selection
     var ownerName: String? = nil
     var ownerID: String? = nil
+    var feature: Data? = nil
+    var image: Data? = nil
 
     enum CodingKeys: String, CodingTableKey {
         typealias Root = Pet
@@ -27,6 +37,9 @@ class Pet: TableCodable {
         case age
         case ownerName
         case ownerID
+        case category
+        case feature
+        case image
 
 
 
@@ -34,23 +47,23 @@ class Pet: TableCodable {
         static var columnConstraintBindings: [CodingKeys: ColumnConstraintBinding]? {
             return [
                 .id: ColumnConstraintBinding(isPrimary: true, isAutoIncrement: true),
-                .name: ColumnConstraintBinding(isNotNull: true, isUnique: true),
             ]
         }
 
         //Index bindings. It is optional.
         static var indexBindings: [IndexBinding.Subfix: IndexBinding]? {
             return [
-                "_index": IndexBinding(indexesBy: CodingKeys.name)
+                "_name_category_index": IndexBinding(indexesBy: name, category),
+                "_name_index": IndexBinding(indexesBy: name)
             ]
         }
 
         //Table constraints for multi-primary, multi-unique and so on. It is optional.
-        //static var tableConstraintBindings: [TableConstraintBinding.Name: TableConstraintBinding]? {
-        //    return [
-        //        "MultiPrimaryConstraint": MultiPrimaryBinding(indexesBy: variable2.asIndex(orderBy: .descending), variable3.primaryKeyPart2)
-        //    ]
-        //}
+        static var tableConstraintBindings: [TableConstraintBinding.Name: TableConstraintBinding]? {
+            return [
+                "MultiUniqueConstraint": MultiUniqueBinding(indexesBy: name, category)
+            ]
+        }
 
         //Virtual table binding for FTS and so on. It is optional.
         //static var virtualTableBinding: VirtualTableBinding? {

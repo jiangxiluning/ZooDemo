@@ -35,26 +35,24 @@ class PetsDataSource {
     }
     
     
-    func addPet(name: String, age: Int? = nil, ownerName: String? = nil, ownerID: String? = nil) -> Bool {
-        do {
+    func addPet(name: String, category: Pet.Category, age: Int? = nil, gender: Bool = true, ownerName: String? = nil, ownerID: String? = nil, feature: Data? = nil, image: Data? = nil) throws {
             try self.innerDB.run(transaction: { () -> Void in
                 let pet = Pet()
                 pet.name = name
+                pet.category = category.rawValue
                 pet.age = age
+                pet.gender = gender
                 pet.ownerName = ownerName
                 pet.ownerID = ownerID
+                pet.feature = feature
+                pet.image = image
                 try self.innerDB.insert(objects: pet, intoTable: self.tableName)
             })
-            return true
-        } catch let error {
-            print("blocked transaction error: \(error)")
-            return false
-        }
     }
     
-    func findPetByName(name: String) -> Pet? {
+    func findPetByNameAndCategory(name: String, category: Pet.Category) -> Pet? {
         do {
-            let pet: Pet? = try self.innerDB.getObject(fromTable: self.tableName, where: Pet.Properties.name == name)
+            let pet: Pet? = try self.innerDB.getObject(fromTable: self.tableName, where: Pet.Properties.name == name && Pet.Properties.category == category.rawValue)
             return pet
         }catch let error{
             print("\(error)")
