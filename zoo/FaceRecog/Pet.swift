@@ -12,8 +12,23 @@ import WCDBSwift
 
 class Pet: TableCodable {
     
-    enum Category: Int {
+    enum Category: Int, CaseIterable {
         case dog = 0, cat
+        
+        var description: String {
+            switch self {
+            case .dog:
+                return "狗"
+            case .cat:
+                return "猫"
+            default:
+                return "其他"
+            }
+        }
+    }
+    
+    enum Gender: String, CaseIterable {
+        case male = "哥哥", female = "妹妹"
     }
  
     //Your own properties

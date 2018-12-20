@@ -37,10 +37,27 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: Protocols
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        if pickerView == categoryPicker {
+            return Pet.Category.allCases.count
+        }else
+        {
+            return 2
+        }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == categoryPicker {
+            
+            return Pet.Category(rawValue: row)?.description
+        }else
+        {
+            return Pet.Gender.allCases[row].rawValue
+        }
+    }
+    
+    
 }
