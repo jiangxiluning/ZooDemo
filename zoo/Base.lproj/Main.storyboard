@@ -18,30 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMx-Us-RU4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="宠物列表" id="QSC-MR-UX9">
+                                        <barButtonItem key="rightBarButtonItem" title="投保" id="gfO-Vq-QZA">
+                                            <connections>
+                                                <segue destination="yal-bR-Z44" kind="show" id="h4P-4f-53g"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-ve-3Vp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <navigationBar key="tableFooterView" contentMode="scaleToFill" id="SMx-Us-RU4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <items>
-                                        <navigationItem title="宠物列表" id="QSC-MR-UX9">
-                                            <barButtonItem key="rightBarButtonItem" title="投保" id="gfO-Vq-QZA">
-                                                <connections>
-                                                    <segue destination="yal-bR-Z44" kind="show" id="h4P-4f-53g"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </navigationItem>
-                                    </items>
-                                </navigationBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="AWo-Pf-BxW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="vUr-ve-3Vp" secondAttribute="bottom" id="atd-a1-Gfx"/>
-                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="cmR-gw-VuP"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="vUr-ve-3Vp" secondAttribute="trailing" id="hSn-xt-KJt"/>
-                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="o0s-PU-oTR"/>
+                            <constraint firstItem="SMx-Us-RU4" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="D77-sZ-JX5"/>
+                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="IxH-sP-00h"/>
+                            <constraint firstItem="SMx-Us-RU4" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="atG-FZ-OPk"/>
+                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="top" secondItem="SMx-Us-RU4" secondAttribute="bottom" id="b1p-o2-eoo"/>
+                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="leading" secondItem="SMx-Us-RU4" secondAttribute="leading" id="e7Q-v6-N4W"/>
+                            <constraint firstItem="vUr-ve-3Vp" firstAttribute="trailing" secondItem="SMx-Us-RU4" secondAttribute="trailing" id="fbY-NA-SrQ"/>
+                            <constraint firstItem="SMx-Us-RU4" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="h0b-pA-KuY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -52,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="-328"/>
+            <point key="canvasLocation" x="541.60000000000002" y="-328.78560719640183"/>
         </scene>
         <!--Add Pet View Controller-->
         <scene sceneID="BD8-y4-9Bg">

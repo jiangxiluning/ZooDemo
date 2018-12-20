@@ -60,6 +60,27 @@ class PetsDataSource {
         }
     }
     
+    func findPetByID(_ id: Int) -> Pet? {
+        do {
+            let pet: Pet? = try self.innerDB.getObject(fromTable: self.tableName, where: Pet.Properties.id == id)
+            return pet
+        }catch let error{
+            print("\(error)")
+            return nil
+        }
+    }
+    
+    func getAllPetSIDs() -> [Int] {
+
+        do {
+            let ids = try self.innerDB.getColumn(on: Pet.Properties.id, fromTable: tableName)
+            return (0...ids.count).map({Int($0)})
+        } catch let error {
+            print("select one value error: \(error)")
+            return []
+        }
+    }
+    
     func cleanUp() {
         do {
             try self.innerDB.close(onClosed: {

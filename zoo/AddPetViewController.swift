@@ -23,7 +23,11 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     private var cachedCategory: Pet.Category?
+    private weak var parentView: PetsListViewController!
     
+    override func viewWillAppear(_ animated: Bool) {
+        parentView = self.presentingViewController as? PetsListViewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +84,9 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         do {
             try PetsDataSource.db.addPet(name: name, category: category, age: age, gender: gender, ownerName: ownerName, ownerID: ownerID, feature: feature, image: image)
             print("Insertion succeeds.")
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: {
+                self.parentView.reloadTableView()
+            })
         } catch let err {
             self.showErrAlert("\(err)")
             print("\(err)")
