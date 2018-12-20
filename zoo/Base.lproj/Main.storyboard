@@ -187,6 +187,7 @@
                         <outlet property="nameTextField" destination="MHm-Gr-U0f" id="KWF-gj-cSX"/>
                         <outlet property="ownerIDTextField" destination="Hij-sg-fOV" id="lTM-hY-Rg0"/>
                         <outlet property="ownerNameTextField" destination="xf6-iH-UbY" id="llM-lw-Iik"/>
+                        <outlet property="petImageView" destination="rez-Qc-p4G" id="Twp-uZ-q62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3EW-Aq-hKL" userLabel="First Responder" sceneMemberID="firstResponder"/>

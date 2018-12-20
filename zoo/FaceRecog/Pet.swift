@@ -13,7 +13,7 @@ import WCDBSwift
 class Pet: TableCodable {
     
     enum Category: Int, CaseIterable {
-        case dog = 0, cat
+        case dog = 0, cat, other
         
         var description: String {
             switch self {

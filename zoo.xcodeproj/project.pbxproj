@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6547225E21CB6C5800C0A64B /* PetsRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6547225D21CB6C5800C0A64B /* PetsRecognizer.swift */; };
 		6563D71021C7EC06000E4D6A /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563D70F21C7EC06000E4D6A /* Pet.swift */; };
 		6563D71221C8DDAD000E4D6A /* PetsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563D71121C8DDAD000E4D6A /* PetsDB.swift */; };
 		65E812A921C789C700BAC57C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E812A821C789C700BAC57C /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		415D1A79BD927D397C671C6A /* Pods-zoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-zoo/Pods-zoo.release.xcconfig"; sourceTree = "<group>"; };
 		4AB4FEC026083B714E72271E /* Pods_zooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D8F989228B881FAA6B2C68 /* Pods-zooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zooTests/Pods-zooTests.release.xcconfig"; sourceTree = "<group>"; };
+		6547225D21CB6C5800C0A64B /* PetsRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRecognizer.swift; sourceTree = "<group>"; };
 		6563D70F21C7EC06000E4D6A /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6563D71121C8DDAD000E4D6A /* PetsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsDB.swift; sourceTree = "<group>"; };
 		65E812A521C789C700BAC57C /* zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				65E812D721C7CF6400BAC57C /* Recognizer.swift */,
 				65E812D921C7CF7B00BAC57C /* Classifier.swift */,
 				6563D70F21C7EC06000E4D6A /* Pet.swift */,
+				6547225D21CB6C5800C0A64B /* PetsRecognizer.swift */,
 			);
 			path = FaceRecog;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				65E812AB21C789C700BAC57C /* PetsListViewController.swift in Sources */,
 				6563D71221C8DDAD000E4D6A /* PetsDB.swift in Sources */,
 				65E812D621C7CF4100BAC57C /* Detector.swift in Sources */,
+				6547225E21CB6C5800C0A64B /* PetsRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
