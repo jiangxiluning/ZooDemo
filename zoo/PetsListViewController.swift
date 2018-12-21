@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PetsListViewController: UIViewController, UITableViewDataSource {
+class PetsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
     private var petsIDs : [Int]? = nil
     
@@ -39,7 +39,7 @@ class PetsListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath)
 
         guard let petID = self.petsIDs?[indexPath.row] else {
             return cell
@@ -71,6 +71,27 @@ class PetsListViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowPetDetails":
+            guard let cell = sender as? UITableViewCell else {
+                return
+            }
+            guard let indexPath = self.petsTableView.indexPath(for: cell) else {
+                return
+            }
+            
+            if let selectedPetID = self.petsIDs?[indexPath.row] {
+                let dest = segue.destination as! PetVeriViewController
+                dest.petID = selectedPetID
+            }
+            
+        default:
+            return
+        }
+    }
+    
+    //MARK: methods
     func reloadTableView()  {
         petsIDs = PetsDataSource.db.getAllPetSIDs()
         self.petsTableView.reloadData()

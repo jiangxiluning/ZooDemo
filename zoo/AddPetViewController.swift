@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     //MARK: Controllers
@@ -24,6 +24,8 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private var cachedCategory: Pet.Category?
     private weak var parentView: PetsListViewController!
+    private var isUploadedImage: Bool = false
+    private var imagePicker = UIImagePickerController()
     
     override func viewWillAppear(_ animated: Bool) {
         parentView = self.presentingViewController as? PetsListViewController
@@ -31,6 +33,11 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddPetViewController.tapGesture) )
+        self.petImageView.addGestureRecognizer(tapGesture)
+        self.petImageView.isUserInteractionEnabled = true
+        self.imagePicker.delegate=self
     }
     
     //MARK: Actions
@@ -51,10 +58,13 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if cachedCategory == nil
         {
             let d = petImageView.image!.pngData()!
-            self.cachedCategory = PetsRecognizer.core.classify(image: d)
-            if category != self.cachedCategory{
+            let cachedCategory = PetsRecognizer.core.classify(image: d)
+            if category != cachedCategory {
                 self.showErrAlert("您上传的宠物类型跟您所选的不一致。")
                 return
+            }
+            else{
+                self.cachedCategory = cachedCategory
             }
         }
         
@@ -129,5 +139,52 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
+    @objc func tapGesture(gesture: UIGestureRecognizer) {
+        let alert:UIAlertController=UIAlertController(title: "Profile Picture Options", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let gallaryAction = UIAlertAction(title: "Open Gallary", style: UIAlertAction.Style.default)
+        {
+            UIAlertAction in self.openGallary()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+        {
+            UIAlertAction in self.cancel()
+            
+        }
+        
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func openGallary()
+    {
+        self.imagePicker.allowsEditing = false
+        self.imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    func cancel(){
+        print("Cancel Clicked")
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        self.cachedCategory = PetsRecognizer.core.classify(image: chosenImage.pngData()!)
+        
+        //let image = resizeImage(image: chosenImage, newSize: CGSize(width: 375, height: 244))
+        self.petImageView.image = chosenImage
+
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
