@@ -70,14 +70,21 @@ class PetsDataSource {
         }
     }
     
-    func getAllPetSIDs() -> [Int] {
+    func getAllPetSIDs() -> [Int]? {
 
         do {
             let ids = try self.innerDB.getColumn(on: Pet.Properties.id, fromTable: tableName)
-            return (0...ids.count).map({Int($0)})
+            if ids.count == 0
+            {
+                return nil
+            }else
+            {
+                return (0..<ids.count).map({Int(ids[$0].int32Value)})
+            }
+            
         } catch let error {
             print("select one value error: \(error)")
-            return []
+            return nil
         }
     }
     

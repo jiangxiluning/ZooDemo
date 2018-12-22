@@ -32,7 +32,7 @@ class Pet: TableCodable {
     }
  
     //Your own properties
-    var id: Int = 0
+    var id: Int = 1
     var name: String = ""    // Optional if it would be nil in some WCDB selection
     var category : Int? = nil
     var gender: Bool = true // true for male false for female
@@ -88,5 +88,5 @@ class Pet: TableCodable {
 
     //Properties below are needed only the primary key is auto-incremental
     var isAutoIncrement: Bool = true
-    var lastInsertedRowID: Int64 = 1
+    var lastInsertedRowID: Int64 = 0
 }

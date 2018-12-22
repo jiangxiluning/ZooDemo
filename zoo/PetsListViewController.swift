@@ -21,7 +21,7 @@ class PetsListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view, typically from a nib.
         petsIDs = PetsDataSource.db.getAllPetSIDs()
 
-        petsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        //petsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "PetCell")
         
     }
     
