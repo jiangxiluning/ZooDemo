@@ -7,6 +7,8 @@ target 'zoo' do
 
   # Pods for zoo
   pod 'WCDB.swift'
+  pod 'Firebase/Core'
+  pod 'Firebase/MLModelInterpreter'
 
   target 'zooTests' do
     inherit! :search_paths
